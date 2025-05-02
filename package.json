@@ -1,0 +1,28 @@
+{
+  "name": "cotacao-api",
+  "version": "1.0.0",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianmsfvenom/cotacao-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ianmsfvenom/cotacao-api/issues"
+  },
+  "homepage": "https://github.com/ianmsfvenom/cotacao-api#readme",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.7.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "prisma": "^6.7.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1"
+  }
+}
