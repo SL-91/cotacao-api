@@ -4,6 +4,9 @@ import { SearchExcelResponse } from "../types/response";
 import getJsonFromExcelTable from "../utils/get-json-from-excel-table";
 
 export default new class CotacaoController {
+    index(req: Request, res: Response) {
+        res.status(200).json(getJsonFromExcelTable());
+    }
 
     one(req: Request<OneParams>, res: Response<SearchExcelResponse[]>) {
         const jsonTable = getJsonFromExcelTable().filter((item) => item.cidade === req.params.city);
