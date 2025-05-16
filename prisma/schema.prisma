@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Quotation {
+  id                          Int      @id @default(autoincrement())
+  plano_grupo                 String
+  coparticipacao_tipo         String
+  segmentacao                 String      
+  acomodacao                  String
+  assistencia_modalidade      String
+  codigo_interno              String?
+  registro_ans                String
+  cidade                      String
+  validade_valores            String
+  tipo_plano                  String
+  preco_00_a_18_anos          Decimal?
+  preco_19_a_23_anos          Decimal?
+  preco_24_a_28_anos          Decimal?
+  preco_29_a_33_anos          Decimal?
+  preco_34_a_38_anos          Decimal?
+  preco_39_a_43_anos          Decimal?
+  preco_44_a_48_anos          Decimal?
+  preco_49_a_53_anos          Decimal?
+  preco_54_a_58_anos          Decimal?
+  preco_59_anos_ou_mais       Decimal?
+  preco_todas_idades          Decimal?
+  consultas_eletivas          Decimal?
+  consultas_urgencia          Decimal?
+  exames_simples              Decimal?
+  exames_complexos            Decimal?
+  terapias_neurologicas       Decimal?
+  demais_terapias             Decimal?
+  desconto_vidas              Int?
+  desconto_familiares         String?
+  quantidade_de_familiares    String?
+
+
+  @@map("quotations")
+}

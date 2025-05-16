@@ -7,8 +7,6 @@ router.get('/', CotacaoController.index);
 router.get('/:city', CotacaoController.one);
 router.get('/:city/:plan_type', CotacaoController.two);
 router.get('/:city/:plan_type/:accomodation', CotacaoController.three);
-router.get('/:city/:plan_type/:accomodation/:segmentation', CotacaoController.four);
-router.get('/:city/:plan_type/:accomodation/:segmentation/:plan_group', CotacaoController.five);
-router.get('/:city/:plan_type/:accomodation/:segmentation/:plan_group/:odonto', CotacaoController.six);
+router.get('/:city/:plan_type/:accomodation/:plan_group/:odonto', CotacaoController.five);
 
 export default router

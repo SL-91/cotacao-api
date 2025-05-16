@@ -32,7 +32,16 @@ const getJsonFromExcelTable = () => {
             R: "preco_49_a_53_anos",
             S: "preco_54_a_58_anos",
             T: "preco_59_anos_ou_mais",
-            U: "preco_todas_idades"
+            U: "preco_todas_idades",
+            V: "consultas_eletivas",
+            W: "consultas_urgencia",
+            X: "exames_simples",
+            Y: "exames_complexos",
+            Z: "terapias_neurologicas",
+            AA: "demais_terapias",
+            AB: "desconto_vidas",
+            AC: "desconto_familiares",
+            AD: "quantidade_de_familiares"
         }
     })).Sheet1;
 
@@ -49,7 +58,16 @@ const getJsonFromExcelTable = () => {
             preco_49_a_53_anos: item.preco_49_a_53_anos === '' ? null : item.preco_49_a_53_anos,
             preco_54_a_58_anos: item.preco_54_a_58_anos === '' ? null : item.preco_54_a_58_anos,
             preco_59_anos_ou_mais: item.preco_59_anos_ou_mais === '' ? null : item.preco_59_anos_ou_mais,
-            preco_todas_idades: item.preco_todas_idades === '' ? null : item.preco_todas_idades
+            preco_todas_idades: item.preco_todas_idades === '' ? null : item.preco_todas_idades,
+            consultas_eletivas: item.consultas_eletivas === '' ? null : item.consultas_eletivas,
+            consultas_urgencia: item.consultas_urgencia === '' ? null : item.consultas_urgencia,
+            exames_simples: item.exames_simples === '' ? null : item.exames_simples,
+            exames_complexos: item.exames_complexos === '' ? null : item.exames_complexos,
+            terapias_neurologicas: item.terapias_neurologicas === '' ? null : item.terapias_neurologicas,
+            demais_terapias: item.demais_terapias === '' ? null : item.demais_terapias,
+            desconto_vidas: item.desconto_vidas === '' ? null : item.desconto_vidas / 100, 
+            desconto_familiares: item.desconto_familiares === '' ? null : (item.desconto_familiares as string).split(',').map(item => Number(item) / 100),
+            quantidade_de_familiares: item.quantidade_de_familiares === '' ? null : (item.quantidade_de_familiares as string).split(',').map(Number)
         }
     }) as SearchExcelResponse[]
 }
