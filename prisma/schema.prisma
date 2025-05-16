@@ -13,13 +13,13 @@ model Quotation {
   id                          Int      @id @default(autoincrement())
   plano_grupo                 String
   coparticipacao_tipo         String
-  segmentacao                 String      
+  segmentacao                 String?     
   acomodacao                  String
   assistencia_modalidade      String
   codigo_interno              String?
-  registro_ans                String
+  registro_ans                String?
   cidade                      String
-  validade_valores            String
+  validade_valores            String?
   tipo_plano                  String
   preco_00_a_18_anos          Decimal?
   preco_19_a_23_anos          Decimal?
