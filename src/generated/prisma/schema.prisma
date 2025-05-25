@@ -8,36 +8,709 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model SequelizeMeta {
+  name String @id @unique(map: "name") @db.VarChar(255)
+}
+
+model accommodation_quotations {
+  id   BigInt @id @default(autoincrement()) @db.UnsignedBigInt
+  name String @db.VarChar(255)
+}
+
+model attendant {
+  id        String   @id @db.Char(36)
+  jid       String   @unique(map: "jid") @db.VarChar(255)
+  name      String   @db.VarChar(255)
+  password  String   @db.VarChar(255)
+  token     String?  @db.VarChar(255)
+  isAdmin   Boolean
+  createdAt DateTime @db.DateTime(0)
+  updatedAt DateTime @db.DateTime(0)
+  calls     calls[]
+}
+
+model attendant_calls {
+  id             String      @id @db.Char(36)
+  jid            String      @db.VarChar(255)
+  mainProblem    String      @db.VarChar(255)
+  detailsProblem String      @db.LongText
+  pushName       String      @db.VarChar(255)
+  attendantId    String?     @db.Char(36)
+  isResolved     Boolean
+  createdAt      DateTime    @db.DateTime(0)
+  updatedAt      DateTime    @db.DateTime(0)
+  attendants     attendants? @relation(fields: [attendantId], references: [id], map: "attendant_calls_ibfk_1")
+
+  @@index([attendantId], map: "attendantId")
+}
+
+model attendants {
+  id              String            @id @db.Char(36)
+  jid             String            @unique(map: "jid") @db.VarChar(255)
+  name            String            @db.VarChar(255)
+  isAdmin         Boolean
+  createdAt       DateTime          @db.DateTime(0)
+  updatedAt       DateTime          @db.DateTime(0)
+  attendant_calls attendant_calls[]
+}
+
+model budget_consults_aut {
+  id          String    @id @db.Char(36)
+  budget_code Int
+  is_error    Boolean
+  user_id     String    @db.Char(36)
+  createdAt   DateTime  @db.DateTime(0)
+  updatedAt   DateTime  @db.DateTime(0)
+  users_aut   users_aut @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "budget_consults_aut_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model budget_consults_clt {
+  id          String    @id @db.Char(36)
+  budget_code Int
+  is_error    Boolean
+  user_id     String    @db.Char(36)
+  createdAt   DateTime  @db.DateTime(0)
+  updatedAt   DateTime  @db.DateTime(0)
+  users_clt   users_clt @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "budget_consults_clt_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model budget_consults_goi {
+  id          String    @id @db.Char(36)
+  budget_code Int
+  is_error    Boolean
+  user_id     String    @db.Char(36)
+  createdAt   DateTime  @db.DateTime(0)
+  updatedAt   DateTime  @db.DateTime(0)
+  users_goi   users_goi @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "budget_consults_goi_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model budget_consults_spa {
+  id          String    @id @db.Char(36)
+  budget_code Int
+  is_error    Boolean
+  user_id     String    @db.Char(36)
+  createdAt   DateTime  @db.DateTime(0)
+  updatedAt   DateTime  @db.DateTime(0)
+  users_spa   users_spa @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "budget_consults_spa_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model calls {
+  id             String     @id @db.Char(36)
+  jid            String     @db.VarChar(255)
+  mainProblem    String     @db.VarChar(255)
+  detailsProblem String     @db.LongText
+  pushName       String     @db.VarChar(255)
+  attendantId    String?    @db.Char(36)
+  isResolved     Boolean
+  createdAt      DateTime   @db.DateTime(0)
+  updatedAt      DateTime   @db.DateTime(0)
+  attendant      attendant? @relation(fields: [attendantId], references: [id], map: "calls_ibfk_1")
+
+  @@index([attendantId], map: "attendantId")
+}
+
+model cities_quotations {
+  id   BigInt @id @default(autoincrement()) @db.UnsignedBigInt
+  name String @db.VarChar(255)
+}
+
+model configs_bot_aut {
+  id         String   @id @db.Char(36)
+  tag        String   @unique(map: "tag") @db.VarChar(255)
+  is_actived Boolean
+  createdAt  DateTime @db.DateTime(0)
+  updatedAt  DateTime @db.DateTime(0)
+}
+
+model configs_bot_clt {
+  id         String   @id @db.Char(36)
+  tag        String   @unique(map: "tag") @db.VarChar(255)
+  is_actived Boolean
+  createdAt  DateTime @db.DateTime(0)
+  updatedAt  DateTime @db.DateTime(0)
+}
+
+model configs_bot_goi {
+  id         String   @id @db.Char(36)
+  tag        String   @unique(map: "tag") @db.VarChar(255)
+  is_actived Boolean
+  createdAt  DateTime @db.DateTime(0)
+  updatedAt  DateTime @db.DateTime(0)
+}
+
+model configs_bot_spa {
+  id         String   @id @db.Char(36)
+  tag        String   @unique(map: "tag") @db.VarChar(255)
+  is_actived Boolean
+  createdAt  DateTime @db.DateTime(0)
+  updatedAt  DateTime @db.DateTime(0)
+}
+
+model coparticipation_type_quotations {
+  id   BigInt @id @default(autoincrement()) @db.UnsignedBigInt
+  name String @db.VarChar(255)
+}
+
+model cpf_consults_aut {
+  id        String    @id @db.Char(36)
+  cpf       String    @db.VarChar(255)
+  user_id   String    @db.Char(36)
+  is_error  Boolean
+  createdAt DateTime  @db.DateTime(0)
+  updatedAt DateTime  @db.DateTime(0)
+  users_aut users_aut @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "cpf_consults_aut_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model cpf_consults_clt {
+  id        String    @id @db.Char(36)
+  cpf       String    @db.VarChar(255)
+  user_id   String    @db.Char(36)
+  is_error  Boolean
+  createdAt DateTime  @db.DateTime(0)
+  updatedAt DateTime  @db.DateTime(0)
+  users_clt users_clt @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "cpf_consults_clt_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model cpf_consults_goi {
+  id        String    @id @db.Char(36)
+  cpf       String    @db.VarChar(255)
+  user_id   String    @db.Char(36)
+  is_error  Boolean
+  createdAt DateTime  @db.DateTime(0)
+  updatedAt DateTime  @db.DateTime(0)
+  users_goi users_goi @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "cpf_consults_goi_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model cpf_consults_spa {
+  id        String    @id @db.Char(36)
+  cpf       String    @db.VarChar(255)
+  user_id   String    @db.Char(36)
+  is_error  Boolean
+  createdAt DateTime  @db.DateTime(0)
+  updatedAt DateTime  @db.DateTime(0)
+  users_spa users_spa @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "cpf_consults_spa_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model files {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  name       String    @db.VarChar(255)
+  data       Bytes     @db.Blob
+  mimetype   String    @db.VarChar(255)
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+}
+
+model maintenance_commands {
+  id        String   @id @db.Char(36)
+  bot_type  String   @db.VarChar(255)
+  option    Int
+  createdAt DateTime @db.DateTime(0)
+  updatedAt DateTime @db.DateTime(0)
+}
+
+model messages_log {
+  id           String   @id @db.Char(36)
+  phone_number BigInt
+  message      String   @db.LongText
+  is_attendant Boolean
+  createdAt    DateTime @db.DateTime(0)
+  updatedAt    DateTime @db.DateTime(0)
+}
+
+model modality_assistance_quotations {
+  id   BigInt @id @default(autoincrement()) @db.UnsignedBigInt
+  name String @db.VarChar(255)
+}
+
+model plan_group_quotations {
+  id   BigInt @id @default(autoincrement()) @db.UnsignedBigInt
+  name String @db.VarChar(255)
+}
+
+model plan_type_quotations {
+  id   BigInt @id @default(autoincrement()) @db.UnsignedBigInt
+  name String @db.VarChar(255)
+}
+
+model problems_clt {
+  id        String   @id @db.Char(36)
+  user_id   String   @db.Char(36)
+  problem   String   @db.VarChar(255)
+  createdAt DateTime @db.DateTime(0)
+  updatedAt DateTime @db.DateTime(0)
+}
+
 model Quotation {
-  id                       Int      @id @default(autoincrement())
-  plano_grupo              String
-  coparticipacao_tipo      String
-  segmentacao              String
-  acomodacao               String
-  assistencia_modalidade   String
-  codigo_interno           String?
-  registrro_ans            String
-  cidade                   String
-  validade_valores         String
-  tipo_plano               String
-  preco_00_a_18_anos       Decimal?
-  preco_19_a_23_anos       Decimal?
-  preco_24_a_28_anos       Decimal?
-  preco_29_a_33_anos       Decimal?
-  preco_34_a_38_anos       Decimal?
-  preco_39_a_43_anos       Decimal?
-  preco_44_a_48_anos       Decimal?
-  preco_49_a_53_anos       Decimal?
-  preco_54_a_58_anos       Decimal?
-  preco_59_anos_ou_mais    Decimal?
-  preco_todas_idades       Decimal?
-  consultas_eletivas       Decimal?
-  consultas_urgencia       Decimal?
-  exames_simples           Decimal?
-  exames_complexos         Decimal?
-  terapias_neurologicas    Decimal?
-  demais_terapias          Decimal?
+  id                       BigInt   @id @default(autoincrement()) @db.UnsignedBigInt
+  plano_grupo              String   @db.VarChar(255)
+  estado                   String   @db.VarChar(255)
+  coparticipacao_tipo      String   @db.VarChar(255)
+  segmentacao              String?  @db.VarChar(255)
+  acomodacao               String   @db.VarChar(255)
+  assistencia_modalidade   String   @db.VarChar(255)
+  codigo_interno           String?  @db.VarChar(255)
+  registro_ans             String?  @db.VarChar(255)
+  cidade                   String   @db.VarChar(255)
+  validade_valores         String?  @db.VarChar(255)
+  tipo_plano               String   @db.VarChar(255)
+  preco_00_a_18_anos       Decimal? @db.Decimal(8, 2)
+  preco_19_a_23_anos       Decimal? @db.Decimal(8, 2)
+  preco_24_a_28_anos       Decimal? @db.Decimal(8, 2)
+  preco_29_a_33_anos       Decimal? @db.Decimal(8, 2)
+  preco_34_a_38_anos       Decimal? @db.Decimal(8, 2)
+  preco_39_a_43_anos       Decimal? @db.Decimal(8, 2)
+  preco_44_a_48_anos       Decimal? @db.Decimal(8, 2)
+  preco_49_a_53_anos       Decimal? @db.Decimal(8, 2)
+  preco_54_a_58_anos       Decimal? @db.Decimal(8, 2)
+  preco_59_anos_ou_mais    Decimal? @db.Decimal(8, 2)
+  preco_todas_idades       Decimal? @db.Decimal(8, 2)
+  consultas_eletivas       Decimal? @db.Decimal(8, 2)
+  consultas_urgencia       Decimal? @db.Decimal(8, 2)
+  exames_simples           Decimal? @db.Decimal(8, 2)
+  exames_complexos         Decimal? @db.Decimal(8, 2)
+  terapias_neurologicas    Decimal? @db.Decimal(8, 2)
+  demais_terapias          Decimal? @db.Decimal(8, 2)
   desconto_vidas           Int?
-  desconto_familiares      String?
-  quantidade_de_familiares String?
+  desconto_familiares      String?  @db.VarChar(255)
+  quantidade_de_familiares String?  @db.VarChar(255)
+  campo_vigencia           String?  @db.VarChar(255)
+
+  @@map("quotations")
+}
+
+model quote_calculations_aut {
+  id              String    @id @db.VarChar(255)
+  user_id         String    @db.Char(36)
+  client_name     String    @db.VarChar(255)
+  consultant_name String    @db.VarChar(255)
+  ages            String    @db.VarChar(255)
+  accommodation   String    @db.VarChar(255)
+  plan_type       String    @db.VarChar(255)
+  square          String    @db.VarChar(255)
+  is_odonto       Boolean
+  createdAt       DateTime  @db.DateTime(0)
+  updatedAt       DateTime  @db.DateTime(0)
+  users_aut       users_aut @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "quote_calculations_aut_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model quote_calculations_clt {
+  id              String    @id @db.VarChar(255)
+  user_id         String    @db.Char(36)
+  client_name     String    @db.VarChar(255)
+  consultant_name String    @db.VarChar(255)
+  ages            String    @db.VarChar(255)
+  accommodation   String    @db.VarChar(255)
+  plan_type       String    @db.VarChar(255)
+  square          String    @db.VarChar(255)
+  is_odonto       Boolean
+  createdAt       DateTime  @db.DateTime(0)
+  updatedAt       DateTime  @db.DateTime(0)
+  users_clt       users_clt @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "quote_calculations_clt_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model quote_calculations_goi {
+  id              String    @id @db.VarChar(255)
+  user_id         String    @db.Char(36)
+  client_name     String    @db.VarChar(255)
+  consultant_name String    @db.VarChar(255)
+  ages            String    @db.VarChar(255)
+  accommodation   String    @db.VarChar(255)
+  plan_type       String    @db.VarChar(255)
+  square          String    @db.VarChar(255)
+  is_odonto       Boolean
+  createdAt       DateTime  @db.DateTime(0)
+  updatedAt       DateTime  @db.DateTime(0)
+  users_goi       users_goi @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "quote_calculations_goi_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model quote_calculations_spa {
+  id              String    @id @db.VarChar(255)
+  user_id         String    @db.Char(36)
+  client_name     String    @db.VarChar(255)
+  consultant_name String    @db.VarChar(255)
+  ages            String    @db.VarChar(255)
+  accommodation   String    @db.VarChar(255)
+  plan_type       String    @db.VarChar(255)
+  square          String    @db.VarChar(255)
+  is_odonto       Boolean
+  createdAt       DateTime  @db.DateTime(0)
+  updatedAt       DateTime  @db.DateTime(0)
+  users_spa       users_spa @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "quote_calculations_spa_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model register_partners_aut {
+  id            String   @id @db.Char(36)
+  complete_name String   @db.VarChar(255)
+  phone_number  String   @db.VarChar(255)
+  email         String   @db.VarChar(255)
+  birth_date    String   @db.VarChar(255)
+  city          String   @db.VarChar(255)
+  createdAt     DateTime @db.DateTime(0)
+  updatedAt     DateTime @db.DateTime(0)
+  obs           String?  @db.VarChar(255)
+}
+
+model register_partners_spa {
+  id            String   @id @db.Char(36)
+  complete_name String   @db.VarChar(255)
+  phone_number  String   @db.VarChar(255)
+  email         String   @db.VarChar(255)
+  birth_date    String   @db.VarChar(255)
+  city          String   @db.VarChar(255)
+  createdAt     DateTime @db.DateTime(0)
+  updatedAt     DateTime @db.DateTime(0)
+}
+
+model rh_calls {
+  id         String      @id @db.Char(36)
+  jid        String      @db.VarChar(255)
+  name       String      @db.VarChar(255)
+  message    String      @db.VarChar(255)
+  createdAt  DateTime    @db.DateTime(0)
+  updatedAt  DateTime    @db.DateTime(0)
+  rhNumberId String?     @db.Char(36)
+  rh_numbers rh_numbers? @relation(fields: [rhNumberId], references: [id], map: "rh_calls_ibfk_1")
+
+  @@index([rhNumberId], map: "rhNumberId")
+}
+
+model rh_numbers {
+  id           String     @id @db.Char(36)
+  name         String     @db.VarChar(255)
+  phone_number String     @db.VarChar(255)
+  createdAt    DateTime   @db.DateTime(0)
+  updatedAt    DateTime   @db.DateTime(0)
+  rh_calls     rh_calls[]
+}
+
+model seller_codes {
+  id        String   @id @db.Char(36)
+  code      Int
+  square    String   @db.VarChar(255)
+  createdAt DateTime @db.DateTime(0)
+  updatedAt DateTime @db.DateTime(0)
+}
+
+model sessions_aut {
+  id             String    @id @db.Char(36)
+  entrace_option Int?
+  is_finished    Boolean
+  is_timeout     Boolean
+  is_error       Boolean
+  user_id        String    @db.Char(36)
+  createdAt      DateTime  @db.DateTime(0)
+  updatedAt      DateTime  @db.DateTime(0)
+  users_aut      users_aut @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "sessions_aut_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model sessions_clt {
+  id             String    @id @db.Char(36)
+  entrace_option Int?
+  is_finished    Boolean
+  is_timeout     Boolean
+  is_error       Boolean
+  user_id        String    @db.Char(36)
+  createdAt      DateTime  @db.DateTime(0)
+  updatedAt      DateTime  @db.DateTime(0)
+  users_clt      users_clt @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "sessions_clt_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model sessions_goi {
+  id             String    @id @db.Char(36)
+  entrace_option Int?
+  is_finished    Boolean
+  is_timeout     Boolean
+  is_error       Boolean
+  user_id        String    @db.Char(36)
+  createdAt      DateTime  @db.DateTime(0)
+  updatedAt      DateTime  @db.DateTime(0)
+  users_goi      users_goi @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "sessions_goi_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model sessions_spa {
+  id             String    @id @db.Char(36)
+  entrace_option Int?
+  is_finished    Boolean
+  is_timeout     Boolean
+  is_error       Boolean
+  user_id        String    @db.Char(36)
+  createdAt      DateTime  @db.DateTime(0)
+  updatedAt      DateTime  @db.DateTime(0)
+  users_spa      users_spa @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "sessions_spa_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model supervisor_register_partners {
+  id           String    @id @db.VarChar(255)
+  phone_number String?   @db.VarChar(255)
+  name         String?   @db.VarChar(255)
+  createdAt    DateTime? @db.DateTime(0)
+  updatedAt    DateTime? @db.DateTime(0)
+}
+
+model testers_aut {
+  id           String   @id @db.Char(36)
+  phone_number String   @db.VarChar(255)
+  createdAt    DateTime @db.DateTime(0)
+  updatedAt    DateTime @db.DateTime(0)
+}
+
+model testers_clt {
+  id           String   @id @db.Char(36)
+  phone_number String   @db.VarChar(255)
+  createdAt    DateTime @db.DateTime(0)
+  updatedAt    DateTime @db.DateTime(0)
+}
+
+model testers_goi {
+  id           String   @id @db.Char(36)
+  phone_number String   @db.VarChar(255)
+  createdAt    DateTime @db.DateTime(0)
+  updatedAt    DateTime @db.DateTime(0)
+}
+
+model testers_spa {
+  id           String   @id @db.Char(36)
+  phone_number String   @db.VarChar(255)
+  createdAt    DateTime @db.DateTime(0)
+  updatedAt    DateTime @db.DateTime(0)
+}
+
+model threads_aut {
+  id        String    @id @db.Char(36)
+  user_id   String    @db.Char(36)
+  thread    String    @unique(map: "thread") @db.VarChar(255)
+  createdAt DateTime  @db.DateTime(0)
+  updatedAt DateTime  @db.DateTime(0)
+  users_aut users_aut @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "threads_aut_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model threads_clt {
+  id        String    @id @db.Char(36)
+  user_id   String    @db.Char(36)
+  thread    String    @unique(map: "thread") @db.VarChar(255)
+  createdAt DateTime  @db.DateTime(0)
+  updatedAt DateTime  @db.DateTime(0)
+  users_clt users_clt @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "threads_clt_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model threads_goi {
+  id        String    @id @db.Char(36)
+  user_id   String    @db.Char(36)
+  thread    String    @unique(map: "thread") @db.VarChar(255)
+  createdAt DateTime  @db.DateTime(0)
+  updatedAt DateTime  @db.DateTime(0)
+  users_goi users_goi @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "threads_goi_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model threads_spa {
+  id        String    @id @db.Char(36)
+  user_id   String    @db.Char(36)
+  thread    String    @unique(map: "thread") @db.VarChar(255)
+  createdAt DateTime  @db.DateTime(0)
+  updatedAt DateTime  @db.DateTime(0)
+  users_spa users_spa @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "threads_spa_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model tokens_generated_aut {
+  id              String    @id @db.Char(36)
+  create_token_id String?   @unique(map: "create_token_id") @db.VarChar(255)
+  user_id         String    @db.Char(36)
+  is_expired      Boolean
+  is_error        Boolean
+  is_confirmed    Boolean
+  is_closed       Boolean
+  createdAt       DateTime  @db.DateTime(0)
+  updatedAt       DateTime  @db.DateTime(0)
+  users_aut       users_aut @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "tokens_generated_aut_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model tokens_generated_clt {
+  id              String    @id @db.Char(36)
+  create_token_id String?   @unique(map: "create_token_id") @db.VarChar(255)
+  user_id         String    @db.Char(36)
+  is_expired      Boolean
+  is_error        Boolean
+  is_confirmed    Boolean
+  is_closed       Boolean
+  createdAt       DateTime  @db.DateTime(0)
+  updatedAt       DateTime  @db.DateTime(0)
+  users_clt       users_clt @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "tokens_generated_clt_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model tokens_generated_goi {
+  id              String    @id @db.Char(36)
+  create_token_id String?   @unique(map: "create_token_id") @db.VarChar(255)
+  user_id         String    @db.Char(36)
+  is_expired      Boolean
+  is_error        Boolean
+  is_confirmed    Boolean
+  is_closed       Boolean
+  createdAt       DateTime  @db.DateTime(0)
+  updatedAt       DateTime  @db.DateTime(0)
+  users_goi       users_goi @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "tokens_generated_goi_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model tokens_generated_spa {
+  id              String    @id @db.Char(36)
+  create_token_id String?   @unique(map: "create_token_id") @db.VarChar(255)
+  user_id         String    @db.Char(36)
+  is_expired      Boolean
+  is_error        Boolean
+  is_confirmed    Boolean
+  is_closed       Boolean
+  createdAt       DateTime  @db.DateTime(0)
+  updatedAt       DateTime  @db.DateTime(0)
+  users_spa       users_spa @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "tokens_generated_spa_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model trainings_links_aut {
+  id        String    @id @db.Char(36)
+  user_id   String    @db.Char(36)
+  training  String    @db.VarChar(255)
+  createdAt DateTime  @db.DateTime(0)
+  updatedAt DateTime  @db.DateTime(0)
+  users_aut users_aut @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "trainings_links_aut_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model trainings_links_clt {
+  id        String    @id @db.Char(36)
+  user_id   String    @db.Char(36)
+  training  String    @db.VarChar(255)
+  createdAt DateTime  @db.DateTime(0)
+  updatedAt DateTime  @db.DateTime(0)
+  users_clt users_clt @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "trainings_links_clt_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model trainings_links_goi {
+  id        String    @id @db.Char(36)
+  user_id   String    @db.Char(36)
+  training  String    @db.VarChar(255)
+  createdAt DateTime  @db.DateTime(0)
+  updatedAt DateTime  @db.DateTime(0)
+  users_goi users_goi @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "trainings_links_goi_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model trainings_links_spa {
+  id        String    @id @db.Char(36)
+  user_id   String    @db.Char(36)
+  training  String    @db.VarChar(255)
+  createdAt DateTime  @db.DateTime(0)
+  updatedAt DateTime  @db.DateTime(0)
+  users_spa users_spa @relation(fields: [user_id], references: [id], onDelete: NoAction, map: "trainings_links_spa_ibfk_1")
+
+  @@index([user_id], map: "user_id")
+}
+
+model users_aut {
+  id                     String                   @id @db.Char(36)
+  phone_number           BigInt
+  last_session_id        String?                  @db.Char(36)
+  createdAt              DateTime                 @db.DateTime(0)
+  updatedAt              DateTime                 @db.DateTime(0)
+  budget_consults_aut    budget_consults_aut[]
+  cpf_consults_aut       cpf_consults_aut[]
+  quote_calculations_aut quote_calculations_aut[]
+  sessions_aut           sessions_aut[]
+  threads_aut            threads_aut[]
+  tokens_generated_aut   tokens_generated_aut[]
+  trainings_links_aut    trainings_links_aut[]
+}
+
+model users_clt {
+  id                     String                   @id @db.Char(36)
+  phone_number           BigInt
+  last_session_id        String?                  @db.Char(36)
+  createdAt              DateTime                 @db.DateTime(0)
+  updatedAt              DateTime                 @db.DateTime(0)
+  budget_consults_clt    budget_consults_clt[]
+  cpf_consults_clt       cpf_consults_clt[]
+  quote_calculations_clt quote_calculations_clt[]
+  sessions_clt           sessions_clt[]
+  threads_clt            threads_clt[]
+  tokens_generated_clt   tokens_generated_clt[]
+  trainings_links_clt    trainings_links_clt[]
+}
+
+model users_goi {
+  id                     String                   @id @db.Char(36)
+  phone_number           BigInt
+  last_session_id        String?                  @db.Char(36)
+  createdAt              DateTime                 @db.DateTime(0)
+  updatedAt              DateTime                 @db.DateTime(0)
+  budget_consults_goi    budget_consults_goi[]
+  cpf_consults_goi       cpf_consults_goi[]
+  quote_calculations_goi quote_calculations_goi[]
+  sessions_goi           sessions_goi[]
+  threads_goi            threads_goi[]
+  tokens_generated_goi   tokens_generated_goi[]
+  trainings_links_goi    trainings_links_goi[]
+}
+
+model users_spa {
+  id                     String                   @id @db.Char(36)
+  phone_number           BigInt
+  last_session_id        String?                  @db.Char(36)
+  createdAt              DateTime                 @db.DateTime(0)
+  updatedAt              DateTime                 @db.DateTime(0)
+  budget_consults_spa    budget_consults_spa[]
+  cpf_consults_spa       cpf_consults_spa[]
+  quote_calculations_spa quote_calculations_spa[]
+  sessions_spa           sessions_spa[]
+  threads_spa            threads_spa[]
+  tokens_generated_spa   tokens_generated_spa[]
+  trainings_links_spa    trainings_links_spa[]
 }

@@ -120,15 +120,232 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
+exports.Prisma.SequelizeMetaScalarFieldEnum = {
+  name: 'name'
+};
+
+exports.Prisma.Accommodation_quotationsScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
+};
+
+exports.Prisma.AttendantScalarFieldEnum = {
+  id: 'id',
+  jid: 'jid',
+  name: 'name',
+  password: 'password',
+  token: 'token',
+  isAdmin: 'isAdmin',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Attendant_callsScalarFieldEnum = {
+  id: 'id',
+  jid: 'jid',
+  mainProblem: 'mainProblem',
+  detailsProblem: 'detailsProblem',
+  pushName: 'pushName',
+  attendantId: 'attendantId',
+  isResolved: 'isResolved',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.AttendantsScalarFieldEnum = {
+  id: 'id',
+  jid: 'jid',
+  name: 'name',
+  isAdmin: 'isAdmin',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Budget_consults_autScalarFieldEnum = {
+  id: 'id',
+  budget_code: 'budget_code',
+  is_error: 'is_error',
+  user_id: 'user_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Budget_consults_cltScalarFieldEnum = {
+  id: 'id',
+  budget_code: 'budget_code',
+  is_error: 'is_error',
+  user_id: 'user_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Budget_consults_goiScalarFieldEnum = {
+  id: 'id',
+  budget_code: 'budget_code',
+  is_error: 'is_error',
+  user_id: 'user_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Budget_consults_spaScalarFieldEnum = {
+  id: 'id',
+  budget_code: 'budget_code',
+  is_error: 'is_error',
+  user_id: 'user_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.CallsScalarFieldEnum = {
+  id: 'id',
+  jid: 'jid',
+  mainProblem: 'mainProblem',
+  detailsProblem: 'detailsProblem',
+  pushName: 'pushName',
+  attendantId: 'attendantId',
+  isResolved: 'isResolved',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Cities_quotationsScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
+};
+
+exports.Prisma.Configs_bot_autScalarFieldEnum = {
+  id: 'id',
+  tag: 'tag',
+  is_actived: 'is_actived',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Configs_bot_cltScalarFieldEnum = {
+  id: 'id',
+  tag: 'tag',
+  is_actived: 'is_actived',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Configs_bot_goiScalarFieldEnum = {
+  id: 'id',
+  tag: 'tag',
+  is_actived: 'is_actived',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Configs_bot_spaScalarFieldEnum = {
+  id: 'id',
+  tag: 'tag',
+  is_actived: 'is_actived',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Coparticipation_type_quotationsScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
+};
+
+exports.Prisma.Cpf_consults_autScalarFieldEnum = {
+  id: 'id',
+  cpf: 'cpf',
+  user_id: 'user_id',
+  is_error: 'is_error',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Cpf_consults_cltScalarFieldEnum = {
+  id: 'id',
+  cpf: 'cpf',
+  user_id: 'user_id',
+  is_error: 'is_error',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Cpf_consults_goiScalarFieldEnum = {
+  id: 'id',
+  cpf: 'cpf',
+  user_id: 'user_id',
+  is_error: 'is_error',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Cpf_consults_spaScalarFieldEnum = {
+  id: 'id',
+  cpf: 'cpf',
+  user_id: 'user_id',
+  is_error: 'is_error',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.FilesScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  data: 'data',
+  mimetype: 'mimetype',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+};
+
+exports.Prisma.Maintenance_commandsScalarFieldEnum = {
+  id: 'id',
+  bot_type: 'bot_type',
+  option: 'option',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Messages_logScalarFieldEnum = {
+  id: 'id',
+  phone_number: 'phone_number',
+  message: 'message',
+  is_attendant: 'is_attendant',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Modality_assistance_quotationsScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
+};
+
+exports.Prisma.Plan_group_quotationsScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
+};
+
+exports.Prisma.Plan_type_quotationsScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
+};
+
+exports.Prisma.Problems_cltScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  problem: 'problem',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.QuotationScalarFieldEnum = {
   id: 'id',
   plano_grupo: 'plano_grupo',
+  estado: 'estado',
   coparticipacao_tipo: 'coparticipacao_tipo',
   segmentacao: 'segmentacao',
   acomodacao: 'acomodacao',
   assistencia_modalidade: 'assistencia_modalidade',
   codigo_interno: 'codigo_interno',
-  registrro_ans: 'registrro_ans',
+  registro_ans: 'registro_ans',
   cidade: 'cidade',
   validade_valores: 'validade_valores',
   tipo_plano: 'tipo_plano',
@@ -151,7 +368,337 @@ exports.Prisma.QuotationScalarFieldEnum = {
   demais_terapias: 'demais_terapias',
   desconto_vidas: 'desconto_vidas',
   desconto_familiares: 'desconto_familiares',
-  quantidade_de_familiares: 'quantidade_de_familiares'
+  quantidade_de_familiares: 'quantidade_de_familiares',
+  campo_vigencia: 'campo_vigencia'
+};
+
+exports.Prisma.Quote_calculations_autScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  client_name: 'client_name',
+  consultant_name: 'consultant_name',
+  ages: 'ages',
+  accommodation: 'accommodation',
+  plan_type: 'plan_type',
+  square: 'square',
+  is_odonto: 'is_odonto',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Quote_calculations_cltScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  client_name: 'client_name',
+  consultant_name: 'consultant_name',
+  ages: 'ages',
+  accommodation: 'accommodation',
+  plan_type: 'plan_type',
+  square: 'square',
+  is_odonto: 'is_odonto',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Quote_calculations_goiScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  client_name: 'client_name',
+  consultant_name: 'consultant_name',
+  ages: 'ages',
+  accommodation: 'accommodation',
+  plan_type: 'plan_type',
+  square: 'square',
+  is_odonto: 'is_odonto',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Quote_calculations_spaScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  client_name: 'client_name',
+  consultant_name: 'consultant_name',
+  ages: 'ages',
+  accommodation: 'accommodation',
+  plan_type: 'plan_type',
+  square: 'square',
+  is_odonto: 'is_odonto',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Register_partners_autScalarFieldEnum = {
+  id: 'id',
+  complete_name: 'complete_name',
+  phone_number: 'phone_number',
+  email: 'email',
+  birth_date: 'birth_date',
+  city: 'city',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  obs: 'obs'
+};
+
+exports.Prisma.Register_partners_spaScalarFieldEnum = {
+  id: 'id',
+  complete_name: 'complete_name',
+  phone_number: 'phone_number',
+  email: 'email',
+  birth_date: 'birth_date',
+  city: 'city',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Rh_callsScalarFieldEnum = {
+  id: 'id',
+  jid: 'jid',
+  name: 'name',
+  message: 'message',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  rhNumberId: 'rhNumberId'
+};
+
+exports.Prisma.Rh_numbersScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  phone_number: 'phone_number',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Seller_codesScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  square: 'square',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Sessions_autScalarFieldEnum = {
+  id: 'id',
+  entrace_option: 'entrace_option',
+  is_finished: 'is_finished',
+  is_timeout: 'is_timeout',
+  is_error: 'is_error',
+  user_id: 'user_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Sessions_cltScalarFieldEnum = {
+  id: 'id',
+  entrace_option: 'entrace_option',
+  is_finished: 'is_finished',
+  is_timeout: 'is_timeout',
+  is_error: 'is_error',
+  user_id: 'user_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Sessions_goiScalarFieldEnum = {
+  id: 'id',
+  entrace_option: 'entrace_option',
+  is_finished: 'is_finished',
+  is_timeout: 'is_timeout',
+  is_error: 'is_error',
+  user_id: 'user_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Sessions_spaScalarFieldEnum = {
+  id: 'id',
+  entrace_option: 'entrace_option',
+  is_finished: 'is_finished',
+  is_timeout: 'is_timeout',
+  is_error: 'is_error',
+  user_id: 'user_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Supervisor_register_partnersScalarFieldEnum = {
+  id: 'id',
+  phone_number: 'phone_number',
+  name: 'name',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Testers_autScalarFieldEnum = {
+  id: 'id',
+  phone_number: 'phone_number',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Testers_cltScalarFieldEnum = {
+  id: 'id',
+  phone_number: 'phone_number',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Testers_goiScalarFieldEnum = {
+  id: 'id',
+  phone_number: 'phone_number',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Testers_spaScalarFieldEnum = {
+  id: 'id',
+  phone_number: 'phone_number',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Threads_autScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  thread: 'thread',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Threads_cltScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  thread: 'thread',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Threads_goiScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  thread: 'thread',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Threads_spaScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  thread: 'thread',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Tokens_generated_autScalarFieldEnum = {
+  id: 'id',
+  create_token_id: 'create_token_id',
+  user_id: 'user_id',
+  is_expired: 'is_expired',
+  is_error: 'is_error',
+  is_confirmed: 'is_confirmed',
+  is_closed: 'is_closed',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Tokens_generated_cltScalarFieldEnum = {
+  id: 'id',
+  create_token_id: 'create_token_id',
+  user_id: 'user_id',
+  is_expired: 'is_expired',
+  is_error: 'is_error',
+  is_confirmed: 'is_confirmed',
+  is_closed: 'is_closed',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Tokens_generated_goiScalarFieldEnum = {
+  id: 'id',
+  create_token_id: 'create_token_id',
+  user_id: 'user_id',
+  is_expired: 'is_expired',
+  is_error: 'is_error',
+  is_confirmed: 'is_confirmed',
+  is_closed: 'is_closed',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Tokens_generated_spaScalarFieldEnum = {
+  id: 'id',
+  create_token_id: 'create_token_id',
+  user_id: 'user_id',
+  is_expired: 'is_expired',
+  is_error: 'is_error',
+  is_confirmed: 'is_confirmed',
+  is_closed: 'is_closed',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Trainings_links_autScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  training: 'training',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Trainings_links_cltScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  training: 'training',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Trainings_links_goiScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  training: 'training',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Trainings_links_spaScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  training: 'training',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Users_autScalarFieldEnum = {
+  id: 'id',
+  phone_number: 'phone_number',
+  last_session_id: 'last_session_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Users_cltScalarFieldEnum = {
+  id: 'id',
+  phone_number: 'phone_number',
+  last_session_id: 'last_session_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Users_goiScalarFieldEnum = {
+  id: 'id',
+  phone_number: 'phone_number',
+  last_session_id: 'last_session_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Users_spaScalarFieldEnum = {
+  id: 'id',
+  phone_number: 'phone_number',
+  last_session_id: 'last_session_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.SortOrder = {
@@ -159,29 +706,457 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
+exports.Prisma.SequelizeMetaOrderByRelevanceFieldEnum = {
+  name: 'name'
+};
+
+exports.Prisma.accommodation_quotationsOrderByRelevanceFieldEnum = {
+  name: 'name'
+};
+
 exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
 
+exports.Prisma.attendantOrderByRelevanceFieldEnum = {
+  id: 'id',
+  jid: 'jid',
+  name: 'name',
+  password: 'password',
+  token: 'token'
+};
+
+exports.Prisma.attendant_callsOrderByRelevanceFieldEnum = {
+  id: 'id',
+  jid: 'jid',
+  mainProblem: 'mainProblem',
+  detailsProblem: 'detailsProblem',
+  pushName: 'pushName',
+  attendantId: 'attendantId'
+};
+
+exports.Prisma.attendantsOrderByRelevanceFieldEnum = {
+  id: 'id',
+  jid: 'jid',
+  name: 'name'
+};
+
+exports.Prisma.budget_consults_autOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id'
+};
+
+exports.Prisma.budget_consults_cltOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id'
+};
+
+exports.Prisma.budget_consults_goiOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id'
+};
+
+exports.Prisma.budget_consults_spaOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id'
+};
+
+exports.Prisma.callsOrderByRelevanceFieldEnum = {
+  id: 'id',
+  jid: 'jid',
+  mainProblem: 'mainProblem',
+  detailsProblem: 'detailsProblem',
+  pushName: 'pushName',
+  attendantId: 'attendantId'
+};
+
+exports.Prisma.cities_quotationsOrderByRelevanceFieldEnum = {
+  name: 'name'
+};
+
+exports.Prisma.configs_bot_autOrderByRelevanceFieldEnum = {
+  id: 'id',
+  tag: 'tag'
+};
+
+exports.Prisma.configs_bot_cltOrderByRelevanceFieldEnum = {
+  id: 'id',
+  tag: 'tag'
+};
+
+exports.Prisma.configs_bot_goiOrderByRelevanceFieldEnum = {
+  id: 'id',
+  tag: 'tag'
+};
+
+exports.Prisma.configs_bot_spaOrderByRelevanceFieldEnum = {
+  id: 'id',
+  tag: 'tag'
+};
+
+exports.Prisma.coparticipation_type_quotationsOrderByRelevanceFieldEnum = {
+  name: 'name'
+};
+
+exports.Prisma.cpf_consults_autOrderByRelevanceFieldEnum = {
+  id: 'id',
+  cpf: 'cpf',
+  user_id: 'user_id'
+};
+
+exports.Prisma.cpf_consults_cltOrderByRelevanceFieldEnum = {
+  id: 'id',
+  cpf: 'cpf',
+  user_id: 'user_id'
+};
+
+exports.Prisma.cpf_consults_goiOrderByRelevanceFieldEnum = {
+  id: 'id',
+  cpf: 'cpf',
+  user_id: 'user_id'
+};
+
+exports.Prisma.cpf_consults_spaOrderByRelevanceFieldEnum = {
+  id: 'id',
+  cpf: 'cpf',
+  user_id: 'user_id'
+};
+
+exports.Prisma.filesOrderByRelevanceFieldEnum = {
+  name: 'name',
+  mimetype: 'mimetype'
+};
+
+exports.Prisma.maintenance_commandsOrderByRelevanceFieldEnum = {
+  id: 'id',
+  bot_type: 'bot_type'
+};
+
+exports.Prisma.messages_logOrderByRelevanceFieldEnum = {
+  id: 'id',
+  message: 'message'
+};
+
+exports.Prisma.modality_assistance_quotationsOrderByRelevanceFieldEnum = {
+  name: 'name'
+};
+
+exports.Prisma.plan_group_quotationsOrderByRelevanceFieldEnum = {
+  name: 'name'
+};
+
+exports.Prisma.plan_type_quotationsOrderByRelevanceFieldEnum = {
+  name: 'name'
+};
+
+exports.Prisma.problems_cltOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  problem: 'problem'
+};
+
 exports.Prisma.QuotationOrderByRelevanceFieldEnum = {
   plano_grupo: 'plano_grupo',
+  estado: 'estado',
   coparticipacao_tipo: 'coparticipacao_tipo',
   segmentacao: 'segmentacao',
   acomodacao: 'acomodacao',
   assistencia_modalidade: 'assistencia_modalidade',
   codigo_interno: 'codigo_interno',
-  registrro_ans: 'registrro_ans',
+  registro_ans: 'registro_ans',
   cidade: 'cidade',
   validade_valores: 'validade_valores',
   tipo_plano: 'tipo_plano',
   desconto_familiares: 'desconto_familiares',
-  quantidade_de_familiares: 'quantidade_de_familiares'
+  quantidade_de_familiares: 'quantidade_de_familiares',
+  campo_vigencia: 'campo_vigencia'
+};
+
+exports.Prisma.quote_calculations_autOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  client_name: 'client_name',
+  consultant_name: 'consultant_name',
+  ages: 'ages',
+  accommodation: 'accommodation',
+  plan_type: 'plan_type',
+  square: 'square'
+};
+
+exports.Prisma.quote_calculations_cltOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  client_name: 'client_name',
+  consultant_name: 'consultant_name',
+  ages: 'ages',
+  accommodation: 'accommodation',
+  plan_type: 'plan_type',
+  square: 'square'
+};
+
+exports.Prisma.quote_calculations_goiOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  client_name: 'client_name',
+  consultant_name: 'consultant_name',
+  ages: 'ages',
+  accommodation: 'accommodation',
+  plan_type: 'plan_type',
+  square: 'square'
+};
+
+exports.Prisma.quote_calculations_spaOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  client_name: 'client_name',
+  consultant_name: 'consultant_name',
+  ages: 'ages',
+  accommodation: 'accommodation',
+  plan_type: 'plan_type',
+  square: 'square'
+};
+
+exports.Prisma.register_partners_autOrderByRelevanceFieldEnum = {
+  id: 'id',
+  complete_name: 'complete_name',
+  phone_number: 'phone_number',
+  email: 'email',
+  birth_date: 'birth_date',
+  city: 'city',
+  obs: 'obs'
+};
+
+exports.Prisma.register_partners_spaOrderByRelevanceFieldEnum = {
+  id: 'id',
+  complete_name: 'complete_name',
+  phone_number: 'phone_number',
+  email: 'email',
+  birth_date: 'birth_date',
+  city: 'city'
+};
+
+exports.Prisma.rh_callsOrderByRelevanceFieldEnum = {
+  id: 'id',
+  jid: 'jid',
+  name: 'name',
+  message: 'message',
+  rhNumberId: 'rhNumberId'
+};
+
+exports.Prisma.rh_numbersOrderByRelevanceFieldEnum = {
+  id: 'id',
+  name: 'name',
+  phone_number: 'phone_number'
+};
+
+exports.Prisma.seller_codesOrderByRelevanceFieldEnum = {
+  id: 'id',
+  square: 'square'
+};
+
+exports.Prisma.sessions_autOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id'
+};
+
+exports.Prisma.sessions_cltOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id'
+};
+
+exports.Prisma.sessions_goiOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id'
+};
+
+exports.Prisma.sessions_spaOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id'
+};
+
+exports.Prisma.supervisor_register_partnersOrderByRelevanceFieldEnum = {
+  id: 'id',
+  phone_number: 'phone_number',
+  name: 'name'
+};
+
+exports.Prisma.testers_autOrderByRelevanceFieldEnum = {
+  id: 'id',
+  phone_number: 'phone_number'
+};
+
+exports.Prisma.testers_cltOrderByRelevanceFieldEnum = {
+  id: 'id',
+  phone_number: 'phone_number'
+};
+
+exports.Prisma.testers_goiOrderByRelevanceFieldEnum = {
+  id: 'id',
+  phone_number: 'phone_number'
+};
+
+exports.Prisma.testers_spaOrderByRelevanceFieldEnum = {
+  id: 'id',
+  phone_number: 'phone_number'
+};
+
+exports.Prisma.threads_autOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  thread: 'thread'
+};
+
+exports.Prisma.threads_cltOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  thread: 'thread'
+};
+
+exports.Prisma.threads_goiOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  thread: 'thread'
+};
+
+exports.Prisma.threads_spaOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  thread: 'thread'
+};
+
+exports.Prisma.tokens_generated_autOrderByRelevanceFieldEnum = {
+  id: 'id',
+  create_token_id: 'create_token_id',
+  user_id: 'user_id'
+};
+
+exports.Prisma.tokens_generated_cltOrderByRelevanceFieldEnum = {
+  id: 'id',
+  create_token_id: 'create_token_id',
+  user_id: 'user_id'
+};
+
+exports.Prisma.tokens_generated_goiOrderByRelevanceFieldEnum = {
+  id: 'id',
+  create_token_id: 'create_token_id',
+  user_id: 'user_id'
+};
+
+exports.Prisma.tokens_generated_spaOrderByRelevanceFieldEnum = {
+  id: 'id',
+  create_token_id: 'create_token_id',
+  user_id: 'user_id'
+};
+
+exports.Prisma.trainings_links_autOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  training: 'training'
+};
+
+exports.Prisma.trainings_links_cltOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  training: 'training'
+};
+
+exports.Prisma.trainings_links_goiOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  training: 'training'
+};
+
+exports.Prisma.trainings_links_spaOrderByRelevanceFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  training: 'training'
+};
+
+exports.Prisma.users_autOrderByRelevanceFieldEnum = {
+  id: 'id',
+  last_session_id: 'last_session_id'
+};
+
+exports.Prisma.users_cltOrderByRelevanceFieldEnum = {
+  id: 'id',
+  last_session_id: 'last_session_id'
+};
+
+exports.Prisma.users_goiOrderByRelevanceFieldEnum = {
+  id: 'id',
+  last_session_id: 'last_session_id'
+};
+
+exports.Prisma.users_spaOrderByRelevanceFieldEnum = {
+  id: 'id',
+  last_session_id: 'last_session_id'
 };
 
 
 exports.Prisma.ModelName = {
-  Quotation: 'Quotation'
+  SequelizeMeta: 'SequelizeMeta',
+  accommodation_quotations: 'accommodation_quotations',
+  attendant: 'attendant',
+  attendant_calls: 'attendant_calls',
+  attendants: 'attendants',
+  budget_consults_aut: 'budget_consults_aut',
+  budget_consults_clt: 'budget_consults_clt',
+  budget_consults_goi: 'budget_consults_goi',
+  budget_consults_spa: 'budget_consults_spa',
+  calls: 'calls',
+  cities_quotations: 'cities_quotations',
+  configs_bot_aut: 'configs_bot_aut',
+  configs_bot_clt: 'configs_bot_clt',
+  configs_bot_goi: 'configs_bot_goi',
+  configs_bot_spa: 'configs_bot_spa',
+  coparticipation_type_quotations: 'coparticipation_type_quotations',
+  cpf_consults_aut: 'cpf_consults_aut',
+  cpf_consults_clt: 'cpf_consults_clt',
+  cpf_consults_goi: 'cpf_consults_goi',
+  cpf_consults_spa: 'cpf_consults_spa',
+  files: 'files',
+  maintenance_commands: 'maintenance_commands',
+  messages_log: 'messages_log',
+  modality_assistance_quotations: 'modality_assistance_quotations',
+  plan_group_quotations: 'plan_group_quotations',
+  plan_type_quotations: 'plan_type_quotations',
+  problems_clt: 'problems_clt',
+  Quotation: 'Quotation',
+  quote_calculations_aut: 'quote_calculations_aut',
+  quote_calculations_clt: 'quote_calculations_clt',
+  quote_calculations_goi: 'quote_calculations_goi',
+  quote_calculations_spa: 'quote_calculations_spa',
+  register_partners_aut: 'register_partners_aut',
+  register_partners_spa: 'register_partners_spa',
+  rh_calls: 'rh_calls',
+  rh_numbers: 'rh_numbers',
+  seller_codes: 'seller_codes',
+  sessions_aut: 'sessions_aut',
+  sessions_clt: 'sessions_clt',
+  sessions_goi: 'sessions_goi',
+  sessions_spa: 'sessions_spa',
+  supervisor_register_partners: 'supervisor_register_partners',
+  testers_aut: 'testers_aut',
+  testers_clt: 'testers_clt',
+  testers_goi: 'testers_goi',
+  testers_spa: 'testers_spa',
+  threads_aut: 'threads_aut',
+  threads_clt: 'threads_clt',
+  threads_goi: 'threads_goi',
+  threads_spa: 'threads_spa',
+  tokens_generated_aut: 'tokens_generated_aut',
+  tokens_generated_clt: 'tokens_generated_clt',
+  tokens_generated_goi: 'tokens_generated_goi',
+  tokens_generated_spa: 'tokens_generated_spa',
+  trainings_links_aut: 'trainings_links_aut',
+  trainings_links_clt: 'trainings_links_clt',
+  trainings_links_goi: 'trainings_links_goi',
+  trainings_links_spa: 'trainings_links_spa',
+  users_aut: 'users_aut',
+  users_clt: 'users_clt',
+  users_goi: 'users_goi',
+  users_spa: 'users_spa'
 };
 
 /**
