@@ -84,7 +84,7 @@ export default new class CotacaoController {
 
                 return 0;
             });
-
+            
             res.json(formatQuotation(quotationOrdened));
         } catch (error) {
             console.log(error);   

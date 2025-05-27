@@ -22,7 +22,9 @@ const formatQuotation = (quotations: Quotation[]) => {
             exames_complexos: Number(item.exames_complexos) || null,
             terapias_neurologicas: Number(item.terapias_neurologicas) || null,
             demais_terapias: Number(item.demais_terapias) || null,
-            desconto_vidas: Number(item.desconto_vidas) || null
+            desconto_vidas: Number(item.desconto_vidas) || null,
+            quantidade_de_familiares: item.quantidade_de_familiares?.split(",").map((item) => Number(item)) || null,
+            desconto_familiares: item.desconto_familiares?.split(",").map((item) => Number(item)) || null
         }
     })
 }
