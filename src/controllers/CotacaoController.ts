@@ -21,7 +21,7 @@ export default new class CotacaoController {
         const { city, state } = req.params;
         const planTypes = await prisma.quotation.findMany({ where: { cidade: city, estado: state }, select: { tipo_plano: true } });
         const arrayPlanTypes = planTypes.map((item) => item.tipo_plano).filter((plan_type, index, array) => array.indexOf(plan_type) === index);
-        res.json(arrayPlanTypes.sort());
+        res.json(arrayPlanTypes.sort().reverse());
     }
 
     async three(req: Request<ThreeParams>, res: Response<string[]>) {
