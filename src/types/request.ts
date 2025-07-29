@@ -33,3 +33,13 @@ export type FiveParams = {
     plan_group: string
     odonto: string
 }
+
+export type SixParams = {
+    city: string
+    state: string
+    plan_type: string
+    accomodation: string
+    plan_group: string
+    odonto: string
+    coparticipation_modality: string
+}

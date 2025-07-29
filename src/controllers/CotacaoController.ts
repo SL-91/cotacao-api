@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { FiveParams, FourParams, FourResponse, OneParams, ThreeParams, TwoParams } from "../types/request";
+import { FiveParams, FourParams, FourResponse, OneParams, SixParams, ThreeParams, TwoParams } from "../types/request";
 import prisma from "../../config/prisma";
 import formatQuotation from "../utils/format-quotaton";
 
@@ -86,6 +86,27 @@ export default new class CotacaoController {
             });
             
             res.json(formatQuotation(quotationOrdened));
+        } catch (error) {
+            console.log(error);   
+        }
+    }
+
+    async six(req: Request<SixParams>, res: Response) {
+        const { city, state, plan_type, accomodation, plan_group, odonto, coparticipation_modality } = req.params;        
+        try {
+            const quotations = await prisma.quotation.findMany({ 
+                where: { 
+                    estado: state,
+                    cidade: city, 
+                    tipo_plano: plan_type, 
+                    acomodacao: accomodation, 
+                    plano_grupo: plan_group, 
+                    assistencia_modalidade: odonto,
+                    coparticipacao_tipo: coparticipation_modality
+                }
+            });
+            
+            res.json(formatQuotation(quotations));
         } catch (error) {
             console.log(error);   
         }
