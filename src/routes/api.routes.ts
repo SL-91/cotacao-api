@@ -3,6 +3,7 @@ import CotacaoController from "../controllers/CotacaoController";
 
 const router = Router();
 
+router.get('/v2/search', CotacaoController.search);
 router.get('/', CotacaoController.index);
 router.get('/:state', CotacaoController.one);
 router.get('/:state/:city/', CotacaoController.two);

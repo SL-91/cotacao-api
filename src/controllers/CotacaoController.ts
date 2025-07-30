@@ -1,9 +1,18 @@
 import { Request, Response } from "express";
-import { FiveParams, FourParams, FourResponse, OneParams, SixParams, ThreeParams, TwoParams } from "../types/request";
+import { FiveParams, FourParams, FourResponse, OneParams, SearchQueryRequest, SixParams, ThreeParams, TwoParams } from "../types/request";
 import prisma from "../../config/prisma";
 import formatQuotation from "../utils/format-quotaton";
+import { Prisma } from "../generated/prisma";
 
 export default new class CotacaoController {
+
+    async search(req: Request<{}, {}, {}, Prisma.QuotationWhereInput>, res: Response) {
+        const searchQuotation = await prisma.quotation.findMany({ 
+            where: req.query,
+        });
+        res.json(formatQuotation(searchQuotation));
+    };
+
     async index(req: Request, res: Response<string[]>) {
         const states = await prisma.quotation.findMany({ select: { estado: true } });
         const arrayStates = states.map((item) => item.estado).filter((state, index, array) => array.indexOf(state) === index);
