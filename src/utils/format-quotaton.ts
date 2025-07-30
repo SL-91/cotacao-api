@@ -1,4 +1,4 @@
-import { Quotation } from "../generated/prisma";
+import { Quotation } from "../../generated/prisma";
 
 const formatQuotation = (quotations: Quotation[]) => {
     return quotations.map((item) => {

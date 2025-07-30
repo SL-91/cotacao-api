@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import { FiveParams, FourParams, FourResponse, OneParams, SearchQueryRequest, SixParams, ThreeParams, TwoParams } from "../types/request";
-import prisma from "../../config/prisma";
+import prisma from "../config/prisma";
 import formatQuotation from "../utils/format-quotaton";
-import { Prisma } from "../generated/prisma";
+import { Prisma } from "../../generated/prisma";
 
 export default new class CotacaoController {
 

@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 config();
 import express from 'express';
-import apiRouter from './src/routes/api.routes';
+import apiRouter from './routes/api.routes';
 
 const app = express();
 const port = process.env.PORT || 3000;
