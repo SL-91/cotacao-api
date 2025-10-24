@@ -366,6 +366,8 @@ exports.Prisma.QuotationScalarFieldEnum = {
   exames_complexos: 'exames_complexos',
   terapias_neurologicas: 'terapias_neurologicas',
   demais_terapias: 'demais_terapias',
+  internacoes: 'internacoes',
+  odontologia: 'odontologia',
   desconto_vidas: 'desconto_vidas',
   desconto_familiares: 'desconto_familiares',
   quantidade_de_familiares: 'quantidade_de_familiares',

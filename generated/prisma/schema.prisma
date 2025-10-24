@@ -286,6 +286,8 @@ model Quotation {
   exames_complexos         Decimal? @db.Decimal(8, 2)
   terapias_neurologicas    Decimal? @db.Decimal(8, 2)
   demais_terapias          Decimal? @db.Decimal(8, 2)
+  internacoes              Decimal? @db.Decimal(8, 2)
+  odontologia              Decimal? @db.Decimal(8, 2)
   desconto_vidas           Int?
   desconto_familiares      String?  @db.VarChar(255)
   quantidade_de_familiares String?  @db.VarChar(255)

@@ -31297,6 +31297,8 @@ export namespace Prisma {
     exames_complexos: Decimal | null
     terapias_neurologicas: Decimal | null
     demais_terapias: Decimal | null
+    internacoes: Decimal | null
+    odontologia: Decimal | null
     desconto_vidas: number | null
   }
 
@@ -31319,6 +31321,8 @@ export namespace Prisma {
     exames_complexos: Decimal | null
     terapias_neurologicas: Decimal | null
     demais_terapias: Decimal | null
+    internacoes: Decimal | null
+    odontologia: Decimal | null
     desconto_vidas: number | null
   }
 
@@ -31352,6 +31356,8 @@ export namespace Prisma {
     exames_complexos: Decimal | null
     terapias_neurologicas: Decimal | null
     demais_terapias: Decimal | null
+    internacoes: Decimal | null
+    odontologia: Decimal | null
     desconto_vidas: number | null
     desconto_familiares: string | null
     quantidade_de_familiares: string | null
@@ -31388,6 +31394,8 @@ export namespace Prisma {
     exames_complexos: Decimal | null
     terapias_neurologicas: Decimal | null
     demais_terapias: Decimal | null
+    internacoes: Decimal | null
+    odontologia: Decimal | null
     desconto_vidas: number | null
     desconto_familiares: string | null
     quantidade_de_familiares: string | null
@@ -31424,6 +31432,8 @@ export namespace Prisma {
     exames_complexos: number
     terapias_neurologicas: number
     demais_terapias: number
+    internacoes: number
+    odontologia: number
     desconto_vidas: number
     desconto_familiares: number
     quantidade_de_familiares: number
@@ -31451,6 +31461,8 @@ export namespace Prisma {
     exames_complexos?: true
     terapias_neurologicas?: true
     demais_terapias?: true
+    internacoes?: true
+    odontologia?: true
     desconto_vidas?: true
   }
 
@@ -31473,6 +31485,8 @@ export namespace Prisma {
     exames_complexos?: true
     terapias_neurologicas?: true
     demais_terapias?: true
+    internacoes?: true
+    odontologia?: true
     desconto_vidas?: true
   }
 
@@ -31506,6 +31520,8 @@ export namespace Prisma {
     exames_complexos?: true
     terapias_neurologicas?: true
     demais_terapias?: true
+    internacoes?: true
+    odontologia?: true
     desconto_vidas?: true
     desconto_familiares?: true
     quantidade_de_familiares?: true
@@ -31542,6 +31558,8 @@ export namespace Prisma {
     exames_complexos?: true
     terapias_neurologicas?: true
     demais_terapias?: true
+    internacoes?: true
+    odontologia?: true
     desconto_vidas?: true
     desconto_familiares?: true
     quantidade_de_familiares?: true
@@ -31578,6 +31596,8 @@ export namespace Prisma {
     exames_complexos?: true
     terapias_neurologicas?: true
     demais_terapias?: true
+    internacoes?: true
+    odontologia?: true
     desconto_vidas?: true
     desconto_familiares?: true
     quantidade_de_familiares?: true
@@ -31701,6 +31721,8 @@ export namespace Prisma {
     exames_complexos: Decimal | null
     terapias_neurologicas: Decimal | null
     demais_terapias: Decimal | null
+    internacoes: Decimal | null
+    odontologia: Decimal | null
     desconto_vidas: number | null
     desconto_familiares: string | null
     quantidade_de_familiares: string | null
@@ -31756,6 +31778,8 @@ export namespace Prisma {
     exames_complexos?: boolean
     terapias_neurologicas?: boolean
     demais_terapias?: boolean
+    internacoes?: boolean
+    odontologia?: boolean
     desconto_vidas?: boolean
     desconto_familiares?: boolean
     quantidade_de_familiares?: boolean
@@ -31794,13 +31818,15 @@ export namespace Prisma {
     exames_complexos?: boolean
     terapias_neurologicas?: boolean
     demais_terapias?: boolean
+    internacoes?: boolean
+    odontologia?: boolean
     desconto_vidas?: boolean
     desconto_familiares?: boolean
     quantidade_de_familiares?: boolean
     campo_vigencia?: boolean
   }
 
-  export type QuotationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "plano_grupo" | "estado" | "coparticipacao_tipo" | "segmentacao" | "acomodacao" | "assistencia_modalidade" | "codigo_interno" | "registro_ans" | "cidade" | "validade_valores" | "tipo_plano" | "preco_00_a_18_anos" | "preco_19_a_23_anos" | "preco_24_a_28_anos" | "preco_29_a_33_anos" | "preco_34_a_38_anos" | "preco_39_a_43_anos" | "preco_44_a_48_anos" | "preco_49_a_53_anos" | "preco_54_a_58_anos" | "preco_59_anos_ou_mais" | "preco_todas_idades" | "consultas_eletivas" | "consultas_urgencia" | "exames_simples" | "exames_complexos" | "terapias_neurologicas" | "demais_terapias" | "desconto_vidas" | "desconto_familiares" | "quantidade_de_familiares" | "campo_vigencia", ExtArgs["result"]["quotation"]>
+  export type QuotationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "plano_grupo" | "estado" | "coparticipacao_tipo" | "segmentacao" | "acomodacao" | "assistencia_modalidade" | "codigo_interno" | "registro_ans" | "cidade" | "validade_valores" | "tipo_plano" | "preco_00_a_18_anos" | "preco_19_a_23_anos" | "preco_24_a_28_anos" | "preco_29_a_33_anos" | "preco_34_a_38_anos" | "preco_39_a_43_anos" | "preco_44_a_48_anos" | "preco_49_a_53_anos" | "preco_54_a_58_anos" | "preco_59_anos_ou_mais" | "preco_todas_idades" | "consultas_eletivas" | "consultas_urgencia" | "exames_simples" | "exames_complexos" | "terapias_neurologicas" | "demais_terapias" | "internacoes" | "odontologia" | "desconto_vidas" | "desconto_familiares" | "quantidade_de_familiares" | "campo_vigencia", ExtArgs["result"]["quotation"]>
 
   export type $QuotationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Quotation"
@@ -31835,6 +31861,8 @@ export namespace Prisma {
       exames_complexos: Prisma.Decimal | null
       terapias_neurologicas: Prisma.Decimal | null
       demais_terapias: Prisma.Decimal | null
+      internacoes: Prisma.Decimal | null
+      odontologia: Prisma.Decimal | null
       desconto_vidas: number | null
       desconto_familiares: string | null
       quantidade_de_familiares: string | null
@@ -32237,6 +32265,8 @@ export namespace Prisma {
     readonly exames_complexos: FieldRef<"Quotation", 'Decimal'>
     readonly terapias_neurologicas: FieldRef<"Quotation", 'Decimal'>
     readonly demais_terapias: FieldRef<"Quotation", 'Decimal'>
+    readonly internacoes: FieldRef<"Quotation", 'Decimal'>
+    readonly odontologia: FieldRef<"Quotation", 'Decimal'>
     readonly desconto_vidas: FieldRef<"Quotation", 'Int'>
     readonly desconto_familiares: FieldRef<"Quotation", 'String'>
     readonly quantidade_de_familiares: FieldRef<"Quotation", 'String'>
@@ -65867,6 +65897,8 @@ export namespace Prisma {
     exames_complexos: 'exames_complexos',
     terapias_neurologicas: 'terapias_neurologicas',
     demais_terapias: 'demais_terapias',
+    internacoes: 'internacoes',
+    odontologia: 'odontologia',
     desconto_vidas: 'desconto_vidas',
     desconto_familiares: 'desconto_familiares',
     quantidade_de_familiares: 'quantidade_de_familiares',
@@ -68481,6 +68513,8 @@ export namespace Prisma {
     exames_complexos?: DecimalNullableFilter<"Quotation"> | Decimal | DecimalJsLike | number | string | null
     terapias_neurologicas?: DecimalNullableFilter<"Quotation"> | Decimal | DecimalJsLike | number | string | null
     demais_terapias?: DecimalNullableFilter<"Quotation"> | Decimal | DecimalJsLike | number | string | null
+    internacoes?: DecimalNullableFilter<"Quotation"> | Decimal | DecimalJsLike | number | string | null
+    odontologia?: DecimalNullableFilter<"Quotation"> | Decimal | DecimalJsLike | number | string | null
     desconto_vidas?: IntNullableFilter<"Quotation"> | number | null
     desconto_familiares?: StringNullableFilter<"Quotation"> | string | null
     quantidade_de_familiares?: StringNullableFilter<"Quotation"> | string | null
@@ -68517,6 +68551,8 @@ export namespace Prisma {
     exames_complexos?: SortOrderInput | SortOrder
     terapias_neurologicas?: SortOrderInput | SortOrder
     demais_terapias?: SortOrderInput | SortOrder
+    internacoes?: SortOrderInput | SortOrder
+    odontologia?: SortOrderInput | SortOrder
     desconto_vidas?: SortOrderInput | SortOrder
     desconto_familiares?: SortOrderInput | SortOrder
     quantidade_de_familiares?: SortOrderInput | SortOrder
@@ -68557,6 +68593,8 @@ export namespace Prisma {
     exames_complexos?: DecimalNullableFilter<"Quotation"> | Decimal | DecimalJsLike | number | string | null
     terapias_neurologicas?: DecimalNullableFilter<"Quotation"> | Decimal | DecimalJsLike | number | string | null
     demais_terapias?: DecimalNullableFilter<"Quotation"> | Decimal | DecimalJsLike | number | string | null
+    internacoes?: DecimalNullableFilter<"Quotation"> | Decimal | DecimalJsLike | number | string | null
+    odontologia?: DecimalNullableFilter<"Quotation"> | Decimal | DecimalJsLike | number | string | null
     desconto_vidas?: IntNullableFilter<"Quotation"> | number | null
     desconto_familiares?: StringNullableFilter<"Quotation"> | string | null
     quantidade_de_familiares?: StringNullableFilter<"Quotation"> | string | null
@@ -68593,6 +68631,8 @@ export namespace Prisma {
     exames_complexos?: SortOrderInput | SortOrder
     terapias_neurologicas?: SortOrderInput | SortOrder
     demais_terapias?: SortOrderInput | SortOrder
+    internacoes?: SortOrderInput | SortOrder
+    odontologia?: SortOrderInput | SortOrder
     desconto_vidas?: SortOrderInput | SortOrder
     desconto_familiares?: SortOrderInput | SortOrder
     quantidade_de_familiares?: SortOrderInput | SortOrder
@@ -68637,6 +68677,8 @@ export namespace Prisma {
     exames_complexos?: DecimalNullableWithAggregatesFilter<"Quotation"> | Decimal | DecimalJsLike | number | string | null
     terapias_neurologicas?: DecimalNullableWithAggregatesFilter<"Quotation"> | Decimal | DecimalJsLike | number | string | null
     demais_terapias?: DecimalNullableWithAggregatesFilter<"Quotation"> | Decimal | DecimalJsLike | number | string | null
+    internacoes?: DecimalNullableWithAggregatesFilter<"Quotation"> | Decimal | DecimalJsLike | number | string | null
+    odontologia?: DecimalNullableWithAggregatesFilter<"Quotation"> | Decimal | DecimalJsLike | number | string | null
     desconto_vidas?: IntNullableWithAggregatesFilter<"Quotation"> | number | null
     desconto_familiares?: StringNullableWithAggregatesFilter<"Quotation"> | string | null
     quantidade_de_familiares?: StringNullableWithAggregatesFilter<"Quotation"> | string | null
@@ -72438,6 +72480,8 @@ export namespace Prisma {
     exames_complexos?: Decimal | DecimalJsLike | number | string | null
     terapias_neurologicas?: Decimal | DecimalJsLike | number | string | null
     demais_terapias?: Decimal | DecimalJsLike | number | string | null
+    internacoes?: Decimal | DecimalJsLike | number | string | null
+    odontologia?: Decimal | DecimalJsLike | number | string | null
     desconto_vidas?: number | null
     desconto_familiares?: string | null
     quantidade_de_familiares?: string | null
@@ -72474,6 +72518,8 @@ export namespace Prisma {
     exames_complexos?: Decimal | DecimalJsLike | number | string | null
     terapias_neurologicas?: Decimal | DecimalJsLike | number | string | null
     demais_terapias?: Decimal | DecimalJsLike | number | string | null
+    internacoes?: Decimal | DecimalJsLike | number | string | null
+    odontologia?: Decimal | DecimalJsLike | number | string | null
     desconto_vidas?: number | null
     desconto_familiares?: string | null
     quantidade_de_familiares?: string | null
@@ -72510,6 +72556,8 @@ export namespace Prisma {
     exames_complexos?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     terapias_neurologicas?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     demais_terapias?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    internacoes?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    odontologia?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     desconto_vidas?: NullableIntFieldUpdateOperationsInput | number | null
     desconto_familiares?: NullableStringFieldUpdateOperationsInput | string | null
     quantidade_de_familiares?: NullableStringFieldUpdateOperationsInput | string | null
@@ -72546,6 +72594,8 @@ export namespace Prisma {
     exames_complexos?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     terapias_neurologicas?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     demais_terapias?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    internacoes?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    odontologia?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     desconto_vidas?: NullableIntFieldUpdateOperationsInput | number | null
     desconto_familiares?: NullableStringFieldUpdateOperationsInput | string | null
     quantidade_de_familiares?: NullableStringFieldUpdateOperationsInput | string | null
@@ -72582,6 +72632,8 @@ export namespace Prisma {
     exames_complexos?: Decimal | DecimalJsLike | number | string | null
     terapias_neurologicas?: Decimal | DecimalJsLike | number | string | null
     demais_terapias?: Decimal | DecimalJsLike | number | string | null
+    internacoes?: Decimal | DecimalJsLike | number | string | null
+    odontologia?: Decimal | DecimalJsLike | number | string | null
     desconto_vidas?: number | null
     desconto_familiares?: string | null
     quantidade_de_familiares?: string | null
@@ -72618,6 +72670,8 @@ export namespace Prisma {
     exames_complexos?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     terapias_neurologicas?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     demais_terapias?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    internacoes?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    odontologia?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     desconto_vidas?: NullableIntFieldUpdateOperationsInput | number | null
     desconto_familiares?: NullableStringFieldUpdateOperationsInput | string | null
     quantidade_de_familiares?: NullableStringFieldUpdateOperationsInput | string | null
@@ -72654,6 +72708,8 @@ export namespace Prisma {
     exames_complexos?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     terapias_neurologicas?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     demais_terapias?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    internacoes?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    odontologia?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     desconto_vidas?: NullableIntFieldUpdateOperationsInput | number | null
     desconto_familiares?: NullableStringFieldUpdateOperationsInput | string | null
     quantidade_de_familiares?: NullableStringFieldUpdateOperationsInput | string | null
@@ -76285,6 +76341,8 @@ export namespace Prisma {
     exames_complexos?: SortOrder
     terapias_neurologicas?: SortOrder
     demais_terapias?: SortOrder
+    internacoes?: SortOrder
+    odontologia?: SortOrder
     desconto_vidas?: SortOrder
     desconto_familiares?: SortOrder
     quantidade_de_familiares?: SortOrder
@@ -76310,6 +76368,8 @@ export namespace Prisma {
     exames_complexos?: SortOrder
     terapias_neurologicas?: SortOrder
     demais_terapias?: SortOrder
+    internacoes?: SortOrder
+    odontologia?: SortOrder
     desconto_vidas?: SortOrder
   }
 
@@ -76343,6 +76403,8 @@ export namespace Prisma {
     exames_complexos?: SortOrder
     terapias_neurologicas?: SortOrder
     demais_terapias?: SortOrder
+    internacoes?: SortOrder
+    odontologia?: SortOrder
     desconto_vidas?: SortOrder
     desconto_familiares?: SortOrder
     quantidade_de_familiares?: SortOrder
@@ -76379,6 +76441,8 @@ export namespace Prisma {
     exames_complexos?: SortOrder
     terapias_neurologicas?: SortOrder
     demais_terapias?: SortOrder
+    internacoes?: SortOrder
+    odontologia?: SortOrder
     desconto_vidas?: SortOrder
     desconto_familiares?: SortOrder
     quantidade_de_familiares?: SortOrder
@@ -76404,6 +76468,8 @@ export namespace Prisma {
     exames_complexos?: SortOrder
     terapias_neurologicas?: SortOrder
     demais_terapias?: SortOrder
+    internacoes?: SortOrder
+    odontologia?: SortOrder
     desconto_vidas?: SortOrder
   }
 

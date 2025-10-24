@@ -24,7 +24,9 @@ const formatQuotation = (quotations: Quotation[]) => {
             demais_terapias: Number(item.demais_terapias) || null,
             desconto_vidas: Number(item.desconto_vidas) || null,
             quantidade_de_familiares: item.quantidade_de_familiares?.split(",").map((item) => Number(item)) || null,
-            desconto_familiares: item.desconto_familiares?.split(",").map((item) => Number(item)) || null
+            desconto_familiares: item.desconto_familiares?.split(",").map((item) => Number(item)) || null,
+            internacoes: Number(item.internacoes) || null,
+            odontologia: Number(item.odontologia) || null,
         }
     })
 }
