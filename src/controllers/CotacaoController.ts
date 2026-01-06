@@ -15,7 +15,7 @@ export default new class CotacaoController {
 
     async index(req: Request, res: Response<string[]>) {
         const states = await prisma.quotation.findMany({ select: { estado: true } });
-        const arrayStates = states.map((item) => item.estado).filter((state, index, array) => array.indexOf(state) === index);
+        const arrayStates = states.map((item) => item.estado).filter((state, index, array) => array.indexOf(state) === index) as string[];
         res.json(arrayStates.sort());
     }
 
